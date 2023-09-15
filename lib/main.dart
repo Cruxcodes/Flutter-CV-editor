@@ -4,13 +4,18 @@ import 'package:hng_2/pages/view_cv.dart';
 import 'model/cv_model.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({super.key});
+  MyApp({super.key});
 
-  final CvModel cvModel = CvModel(bio: "this is something",name: "Abdullah Ola Mudathir", github: "");
+  final CvModel cvModel = CvModel(
+      bio: '''Motivated developer with over 2 years of experience creating custom websites through HTML,CSS, JAVASCRIPT and REACT. Strong collaboration skills and proven history of web development.
+''',
+      name: "Abdullah Ola Mudathir",
+      github: "https://github.com/Cruxcodes/Flutter-CV-editor",
+      slackUsername: "Crusader");
 
   // This widget is the root of your application.
   @override
@@ -29,7 +34,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ViewCv(cvModel: cvModel,),
+      home: ViewCv(
+        cvModel: cvModel,
+      ),
     );
   }
 }
