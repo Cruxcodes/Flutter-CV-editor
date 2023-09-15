@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hng_2/model/cv_model.dart';
+import 'package:hng_2/pages/Webview.dart';
 import 'package:hng_2/pages/edit_cv.dart';
 import 'package:hng_2/utils/Colors.dart';
 
@@ -48,15 +49,24 @@ class _ViewCvState extends State<ViewCv> {
                 height: 10,
               ),
               Material(
-                color: Colors.transparent ,
+                color: Colors.transparent,
                 elevation: 4.0,
                 child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => WebView(
+                          urlPath: widget.cvModel.github,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     decoration: BoxDecoration(
-                      color: moonStone,
-                      borderRadius: BorderRadius.circular(10.0)
-                    ),
+                        color: moonStone,
+                        borderRadius: BorderRadius.circular(10.0)),
                     child: Text(
                       "Go to Github",
                       style: TextStyle(
@@ -74,7 +84,6 @@ class _ViewCvState extends State<ViewCv> {
                 widget.cvModel.bio,
                 style: TextStyle(
                   fontSize: MediaQuery.of(context).size.width * 0.045,
-
                 ),
               ),
               ElevatedButton(

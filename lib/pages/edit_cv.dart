@@ -83,6 +83,7 @@ class _EditCvState extends State<EditCv> {
                   ),
                   child: TextFormField(
                     controller: bioController,
+                    maxLines: 5,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                     ),
